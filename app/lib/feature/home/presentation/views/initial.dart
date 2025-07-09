@@ -1,46 +1,54 @@
 import 'package:flutter/material.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+
+class InitialView extends StatelessWidget {
+  const InitialView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 243, 33, 198),
-          title: const Text('𝙲𝚑𝚊𝚝 𝙼𝚘𝚕𝚒 '),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center, 
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text(
-                "𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘 𝚊 𝙲𝚑𝚊𝚝 𝙼𝚘𝚕𝚒",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
+   
+
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 255, 190, 228),
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 255, 125, 212),
+        title: const Text("𝙲𝚑𝚊𝚝 𝙼𝚘𝚕𝚒 ")),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              "𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘 𝚊 𝙲𝚑𝚊𝚝 𝙼𝚘𝚕𝚒",
+              style: TextStyle(
+                fontSize: 20, 
+
+              ),
+              textAlign: TextAlign.center,
+            ),
+
+            const SizedBox(height: 120),
+            SizedBox(
+              width: 350,
+              child: TextField(
+                controller: controller,
+                decoration: const InputDecoration(
+                  hintText: "Escribe tu pregunta...",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
                 ),
               ),
-              const SizedBox(height: 20),
-              Image.network(
-                "https://i.imgur.com/Mzu5wye.png",
-                height: 250,
-              ),
-              ElevatedButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(const Color.fromARGB(255, 243, 33, 198)),
-              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
             ),
-            onPressed: () {
-            },
-            child: Text('Ingresar '),
-              )
-            ],
-          ),
+            const SizedBox(height: 40),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromARGB(255, 248, 57, 207), 
+                foregroundColor: Colors.black, 
+              ),
+              child: const Text("Enviar"),
+            ),
+          ],
         ),
       ),
     );
