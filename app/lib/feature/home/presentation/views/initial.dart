@@ -30,7 +30,7 @@ class InitialView extends StatelessWidget {
             SizedBox(
               width: 350,
               child: TextField(
-                controller: controller,
+                //controller: controller,
                 decoration: const InputDecoration(
                   hintText: "Escribe tu pregunta...",
                   border: OutlineInputBorder(
