@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../bloc/chat_bloc.dart';
-import '../bloc/chat_event.dart';
+
 
 class InitialView extends StatelessWidget {
   const InitialView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = TextEditingController();
+   
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 190, 228),
