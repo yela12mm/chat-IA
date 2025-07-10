@@ -1,11 +1,7 @@
-import 'package:app/feature/home/presentation/bloc/home_bloc.dart';
-import 'package:app/feature/home/presentation/bloc/home_event.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 class InitialView extends StatelessWidget {
-  
   const InitialView({super.key});
 
   @override
@@ -45,13 +41,7 @@ class InitialView extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             ElevatedButton(
-              onPressed: () {
-                final text = controller.text.trim();
-                if (text.isNotEmpty) {
-                  context.read<ChatBloc>().add(SendMessageEvent(text));
-                  controller.clear();
-                }
-              },
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromARGB(255, 248, 57, 207), 
                 foregroundColor: Colors.black, 

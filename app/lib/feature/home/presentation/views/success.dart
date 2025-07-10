@@ -15,7 +15,6 @@ class SuccessView extends StatelessWidget {
       appBar: AppBar(backgroundColor: const Color.fromARGB(255, 255,125,212),title: const Text("𝙲𝚑𝚊𝚝 𝙼𝚘𝚕𝚒")),
       body: Column(
         children: [         
-          
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             child: Row(
