@@ -1,12 +1,16 @@
+import 'package:app/feature/home/presentation/bloc/home_bloc.dart';
+import 'package:app/feature/home/presentation/bloc/home_event.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 class InitialView extends StatelessWidget {
+  
   const InitialView({super.key});
 
   @override
   Widget build(BuildContext context) {
-   
+    final controller = TextEditingController();
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 190, 228),
@@ -30,7 +34,7 @@ class InitialView extends StatelessWidget {
             SizedBox(
               width: 350,
               child: TextField(
-                //controller: controller,
+                controller: controller,
                 decoration: const InputDecoration(
                   hintText: "Escribe tu pregunta...",
                   border: OutlineInputBorder(
@@ -41,7 +45,13 @@ class InitialView extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                final text = controller.text.trim();
+                if (text.isNotEmpty) {
+                  context.read<ChatBloc>().add(SendMessageEvent(text));
+                  controller.clear();
+                }
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromARGB(255, 248, 57, 207), 
                 foregroundColor: Colors.black, 
